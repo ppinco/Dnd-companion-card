@@ -71,10 +71,19 @@ function extractPuterText(res) {
   if (res?.text) return res.text;
   return String(res || "");
 }
+function base64ToFile(base64, mediaType) {
+  const byteChars = atob(base64);
+  const byteNumbers = new Array(byteChars.length);
+  for (let i = 0; i < byteChars.length; i++) byteNumbers[i] = byteChars.charCodeAt(i);
+  const blob = new Blob([new Uint8Array(byteNumbers)], { type: mediaType });
+  return new File([blob], "upload", { type: mediaType });
+}
 async function callPuter(system, prompt, image, maxTokens) {
   await ensurePuter();
   const full = system ? `${system}\n\n${prompt}` : prompt;
-  const res = image ? await window.puter.ai.chat(full, `data:${image.mediaType};base64,${image.base64}`) : await window.puter.ai.chat(full, { model: "claude" });
+  const res = image
+    ? await window.puter.ai.chat(full, base64ToFile(image.base64, image.mediaType), { model: "claude-sonnet-4-6" })
+    : await window.puter.ai.chat(full, { model: "claude-sonnet-4-6" });
   return extractPuterText(res);
 }
 async function callAnthropic(apiKey, system, prompt, image, maxTokens) {
