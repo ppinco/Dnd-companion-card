@@ -27,6 +27,18 @@ scelta tra Claude, ChatGPT o Gemini nelle Impostazioni (icona ⚙ in alto).
 Basta mandargli il link pubblico (GitHub Pages o Netlify). Lui apre, va in Impostazioni,
 mette la sua chiave IA (Claude/ChatGPT/Gemini) e crea i suoi personaggi — tutto resta sul suo telefono, separato dal tuo.
 
+## Novità di questa versione
+- **Nessuna chiave necessaria di default**: l'app usa Puter.js in automatico. Alla prima generazione IA potrebbe apparire un popup di accesso gratuito a puter.com — è normale, va fatto una sola volta per dispositivo. Se preferisci, in Impostazioni puoi comunque passare a Claude/ChatGPT/Gemini con una tua chiave.
+- **Creazione guidata "Razza & Classe"**: scegli tra le 9 razze e le 12 classi base (regole ufficiali gratuite, "Basic Rules"), assegni le caratteristiche con l'array standard, scegli trucchetti/incantesimi iniziali se la classe li prevede.
+- **Sali di livello**: automatico (calcola tutto da solo) o manuale (tiri tu il dado vita, scegli il miglioramento caratteristiche o talento, e puoi chiedere un suggerimento all'IA prima di decidere).
+- **Riposo breve**: spendi dadi vita per curarti, recuperi gli slot patto del Warlock.
+- **Riposo lungo**: PF al massimo, tutti gli slot incantesimo ricaricati, metà dadi vita recuperati.
+- **Ritratto IA**: pulsante "Ritratto" nella scheda, genera un'immagine del personaggio (richiede Puter.js o una chiave con generazione immagini).
+- **Incantesimi**: ora segnalabili come "lanciato" durante la sessione, con slot per livello se la classe li usa.
+
+## Limite sulle sottoclassi
+Le sottoclassi complete di tutti i manuali sono contenuto a pagamento di Wizards of the Coast: l'app include solo la sottoclasse base gratuita per ciascuna classe. Per varianti diverse, usa la creazione "Da descrizione" e chiedi esplicitamente la sottoclasse che vuoi: l'IA la applicherà a livello di tratti/incantesimi senza dover copiare testo dai manuali.
+
 ## Dove si prende una chiave API
 - Claude: console.anthropic.com → API Keys
 - ChatGPT: platform.openai.com → API Keys
